@@ -7,7 +7,7 @@ Omron_D6FPH mySensor;
 void setup() {
     Serial.begin(115200);
     Wire.begin();
-    mySensor.begin();
+    mySensor.begin(MODEL_5050AD3);
 } 
 
 void loop() {

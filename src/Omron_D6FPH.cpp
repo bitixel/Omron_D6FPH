@@ -8,6 +8,10 @@ Omron_D6FPH::Omron_D6FPH(void){
   // Constructor
 }
 
+boolean Omron_D6FPH::begin(sensorModels sensorModel){
+  return begin(Wire, D6FPH_ADDRESS, sensorModel);
+}
+
 boolean Omron_D6FPH::begin(TwoWire &wirePort, uint8_t deviceAddress, sensorModels sensorModel){
   setSensorModel(sensorModel);
   _i2cPort = &wirePort;
@@ -22,12 +26,12 @@ void Omron_D6FPH::setSensorModel(sensorModels sensorModel){
     _sensorModel = sensorModel;
     switch (_sensorModel)
     {
-    case D6F_PH0025AD1:
+    case MODEL_0025AD1:
         _rangeMode = 250;
         _rangeModeMulVal = 1;
         _rangeModeSubVal = 0;
         break;
-    case D6F_PH0505AD3:
+    case MODEL_0505AD3:
         _rangeMode = 50;
         _rangeModeMulVal = 2;
         _rangeModeSubVal = 50;
