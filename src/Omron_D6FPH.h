@@ -30,7 +30,7 @@
 #define SERIAL_CTRL_R_WZ            2
 #define SERIAL_CTRL_VAL   (0x01 << SERIAL_CTRL_R_WZ | 0x01 << SERIAL_CTRL_REQ | 0x01 << SERIAL_CTRL_D_BYTE_CNT3)
 
-#if defined(__AVR__) || defined(ESP8266)
+#if defined(__AVR__) || defined(ESP8266) || defined(ESP32)
 typedef enum {
     I2C_ERROR_OK=0,
     I2C_ERROR_LENGTH,
